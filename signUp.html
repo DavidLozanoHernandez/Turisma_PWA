@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login PWA</title>
+    <title>Registrarse</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="manifest" href="manifest.json">
 </head>
@@ -13,21 +13,24 @@
     <div class="container">
         <h1>Iniciar Sesión</h1>
 
-        <form id="loginForm">
+        <form id="signUpForm">
             <label for="nombre">Nombre:</label>
             <input type="text" id="name" required>
 
             <label for="apellido">Apellido:</label>
-            <input type="text" id="apellido" required>
+            <input type="text" id="lastname" required>
 
-            <label for="tel">Correo Electrónico:</label>
-            <input type="text" id="tel" required>
+            <label for="tel">Telefono:</label>
+            <input type="text" id="phone" required>
 
             <label for="email">Correo Electrónico:</label>
             <input type="email" id="email" required>
 
             <label for="password">Contraseña:</label>
             <input type="password" id="password" required>
+
+
+            <div id="error-container" class="error-message"></div>
 
             <button type="submit">Registrarse</button>
 
@@ -37,7 +40,7 @@
     </div>
 
     <script src="js/app.js"></script>
-    <script src="js/api.js"></script>
+    <script src="js/api_auth.js"></script>
 </body>
 
 </html>
