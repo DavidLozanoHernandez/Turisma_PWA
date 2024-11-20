@@ -21,6 +21,10 @@ async function login(credentials) {
     }
 
     const data = await response.json();
+    console.log(data)
+    localStorage.setItem('token', data.access_token);
+    localStorage.setItem('user', data.user);
+    window.location.href = "menu.html";
     return data;
   } catch (error) {
     console.error('Error al intentar iniciar sesión:', error);
@@ -60,7 +64,7 @@ async function signUp(credentials) {
         name: credentials.name,
         email: credentials.email,
         password: credentials.password,
-        lastname: credentials.lastname,
+        lastName: credentials.lastname,
         phone: credentials.phone,
       }),
     });
@@ -73,6 +77,8 @@ async function signUp(credentials) {
     }
 
     const data = await response.json();
+    alert('Registro exitoso. Se envio un enlace para vereficar su correo electronico');
+    window.location.href = "index.html";
     return data;
   } catch (error) {
     console.error('Error al registrarse:', error.message || error);
