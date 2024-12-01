@@ -9,15 +9,14 @@
     <link rel="manifest" href="manifest.json">
 
     <style>
-        .custom-navbar {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0f0c29;
-            color: #ecf0f1; /* Color claro para el texto */
-            margin: 0; 
+            background-color: white;
+            margin: 0;
+        }
+
+        .custom-navbar {
+            background-color: #8dc4bc;
         }
 
         .navbar-brand,
@@ -26,53 +25,88 @@
         }
 
         .navbar-nav .nav-link:hover {
-            color: #3498db; /* Color brillante para hover */
+            color: #3498db;
         }
 
-        .card {
-            background-color:  rgba(255, 255, 255, 0.1);
-            border: none;
-            margin: 15px 0;
-            color: #ecf0f1;
+        .header {
+            background-color: #8dc4bc;
+            padding: 20px;
+            text-align: center;
         }
 
-        .card-title {
-            color: #ffffff; /* Blanco para títulos */
+        .header h1 {
+            font-family: 'Tahoma', sans-serif;
+            font-size: 34px;
+            color: white;
         }
 
-        .card-body {
-            padding: 1.5rem;
+        .searchbar {
+            margin-top: 20px;
+            margin-bottom: 30px;
         }
 
-        .card-text {
-            color: #ffffff; /* Texto secundario con gris más suave */
+        /* Contenedor centrado para todo el contenido */
+        .container-centered {
+            max-width: 1200px; /* Ajusta el tamaño máximo de los contenedores */
+            margin: 0 auto; /* Centra el contenedor */
+            padding: 0 15px; /* Agrega un pequeño margen */
         }
 
-        .carousel-inner img {
-            height: 400px;
-            object-fit: cover;
-        }
-
-        /* Contenedor de la tarjeta centrado */
-        .card-container {
+        .excursion {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: flex-start;
-            margin-top: 5%;
-            gap: 15px;
+            margin-bottom: 20px;
+            border-top: 2px solid #8dc4bc;
+            padding: 10px;
+            gap: 20px;
+            flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas grandes */
+            justify-content: center; /* Centra los elementos dentro del contenedor */
         }
 
-        .btn-primary {
-            background-color: #ffffff;
-            border: none;
+        .excursion img {
+            width: 100%;
+            max-width: 350px; /* Limita el ancho máximo de la imagen */
+            height: auto; /* Mantiene la proporción de la imagen */
+            object-fit: cover;
+            border-radius: 10px;
         }
 
+        .excursion .exc-info {
+            max-width: 600px;
+            text-align: center; /* Centra el texto */
+        }
+
+        .excursion h5 {
+            font-size: 20px;
+            color: #49707e;
+            font-weight: 600;
+        }
+
+        .excursion .exc-date {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .excursion .exc-description {
+            font-size: 14px;
+            color: black;
+        }
+
+        .excursion .btn {
+            background-color: #e9e6dc;
+            border-color: #428ce2;
+            border-width: 1px;
+        }
+
+        .excursion .btn-text {
+            font-size: 14px;
+            color: black;
+        }
     </style>
 </head>
 
 <body>
 
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg custom-navbar">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Turisma</a>
@@ -85,25 +119,66 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Excursiones</a>
+                        <a class="nav-link" href="#">Excursiones</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Reservaciones</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Perfil</a>
-                    </ul>
-                </div>
+                    </li>
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
 
-    <div class="card-container">
-        <!-- Las tarjetas se insertarán dinámicamente aquí -->
+    <!-- Header -->
+    <div class="header">
+        <h1>Excursiones</h1>
     </div>
 
+    <!-- Buscador -->
+    <div class="container-fluid">
+        <div class="searchbar">
+            <input type="text" class="form-control" placeholder="Buscar" aria-label="Search" id="search-input">
+        </div>
+    </div>
+
+    <!-- Excursiones -->
+    <div class="container-centered">
+        <div class="excursion">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Barbados_beach.jpg/250px-Barbados_beach.jpg" alt="Excursión 1">
+            <div class="exc-info">
+                <h5>OAXACA HUATULCO</h5>
+                <p class="exc-date">25-01-2025</p>
+                <p class="exc-description">3 días, 2 noches en playas del puerto</p>
+                <button class="btn btn-primary">Más detalles</button>
+            </div>
+        </div>
+        <div class="excursion">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Barbados_beach.jpg/250px-Barbados_beach.jpg" alt="Excursión 2">
+            <div class="exc-info">
+                <h5>OAXACA HUATULCO</h5>
+                <p class="exc-date">25-01-2025</p>
+                <p class="exc-description">3 días, 2 noches en playas del puerto</p>
+                <button class="btn btn-primary">Más detalles</button>
+            </div>
+        </div>
+        <div class="excursion">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Barbados_beach.jpg/250px-Barbados_beach.jpg" alt="Excursión 3">
+            <div class="exc-info">
+                <h5>OAXACA HUATULCO</h5>
+                <p class="exc-date">25-01-2025</p>
+                <p class="exc-description">3 días, 2 noches en playas del puerto</p>
+                <button class="btn btn-primary">Más detalles</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/api_excursion.js"></script>
+
 </body>
 
 </html>
